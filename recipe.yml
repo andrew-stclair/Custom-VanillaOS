@@ -1,8 +1,8 @@
 name: Andrew's Custom VanillaOS Desktop
-id: andrew-vanillaos
+id: templated # Check the matrix in the workflow files
 stages:
 - id: build
-  base: ghcr.io/vanilla-os/desktop:main # Optionally, Replace this image URL with a different one i.e. nvidia:main, etc
+  base: templated # Check the matrix in the workflow files
   singlelayer: false
   labels:
     maintainer: self-maintained # Optionally, Replace this with your name

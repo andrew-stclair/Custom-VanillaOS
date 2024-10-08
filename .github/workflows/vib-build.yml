@@ -11,15 +11,30 @@ on:
   workflow_dispatch:
 
 env:
-  CUSTOM_IMAGE_NAME: andrew-vanillaos
   BUILDX_NO_DEFAULT_ATTESTATIONS: 1
 
 jobs:
   verify_image:
+    strategy:
+      matrix:
+        include:
+          - id: andrew-vanillaos
+            base: ghcr.io/vanilla-os/desktop:main
+          - id: andrew-vanillaos-nvidia
+            base: ghcr.io/vanilla-os/nvidia:main
+    env:
+      CUSTOM_IMAGE_NAME: ${{ matrix.id }}
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
+
+    - name: Update recipe.yml
+      uses: fjogeleit/yaml-update-action@main
+      with:
+        valueFile: 'recipe.yml'
+        changes: '{"id":"${{ matrix.id }}","stages.0.base":"${{ matrix.base }}"}'
+        commitChange: false
 
     - name: Install dependencies
       run: sudo apt-get install -y libfyaml-utils
@@ -40,6 +55,15 @@ jobs:
         GH_TOKEN: ${{ github.token }}
 
   check_update:
+    strategy:
+      matrix:
+        include:
+          - id: andrew-vanillaos
+            base: ghcr.io/vanilla-os/desktop:main
+          - id: andrew-vanillaos-nvidia
+            base: ghcr.io/vanilla-os/nvidia:main
+    env:
+      CUSTOM_IMAGE_NAME: ${{ matrix.id }}
     runs-on: ubuntu-latest
 
     outputs:
@@ -52,6 +76,13 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
+      - name: Update recipe.yml
+        uses: fjogeleit/yaml-update-action@main
+        with:
+          valueFile: 'recipe.yml'
+          changes: '{"id":"${{ matrix.id }}","stages.0.base":"${{ matrix.base }}"}'
+          commitChange: false
 
       - name: Install dependencies
         run: sudo apt-get install -y jq skopeo libfyaml-utils
@@ -114,6 +145,15 @@ jobs:
           fi
 
   build:
+    strategy:
+      matrix:
+        include:
+          - id: andrew-vanillaos
+            base: ghcr.io/vanilla-os/desktop:main
+          - id: andrew-vanillaos-nvidia
+            base: ghcr.io/vanilla-os/nvidia:main
+    env:
+      CUSTOM_IMAGE_NAME: ${{ matrix.id }}
     runs-on: ubuntu-latest
     needs: [check_update, verify_image]
     if: ${{ needs.check_update.outputs.has_updates == 'true' }}
@@ -125,6 +165,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+
+    - name: Update recipe.yml
+      uses: fjogeleit/yaml-update-action@main
+      with:
+        valueFile: 'recipe.yml'
+        changes: '{"id":"${{ matrix.id }}","stages.0.base":"${{ matrix.base }}"}'
+        commitChange: false
 
     - uses: vanilla-os/vib-gh-action@v0.8.1
       with:
