@@ -109,7 +109,7 @@ jobs:
         uses: actions/download-artifact@v4
         continue-on-error: true
         with:
-          name: digest
+          name: ${{ matrix.id }}-digest
           github-token: ${{ github.token }}
           run-id: ${{ env.LAST_RUN_ID }}
 
@@ -125,7 +125,7 @@ jobs:
       - name: Upload current digest
         uses: actions/upload-artifact@v4
         with:
-          name: digest
+          name: ${{ matrix.id }}-digest
           path: digest.txt
 
       - name: Set output
@@ -180,7 +180,7 @@ jobs:
 
     - uses: actions/upload-artifact@v4
       with:
-        name: Containerfile
+        name: ${{ matrix.id }}-Containerfile
         path: Containerfile
 
     - name: Generate image name
