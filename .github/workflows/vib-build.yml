@@ -18,9 +18,9 @@ jobs:
     strategy:
       matrix:
         include:
-          - id: andrew-vanillaos
+          - id: desktop
             base: ghcr.io/vanilla-os/desktop:main
-          - id: andrew-vanillaos-nvidia
+          - id: nvidia
             base: ghcr.io/vanilla-os/nvidia:main
     env:
       CUSTOM_IMAGE_NAME: ${{ matrix.id }}
@@ -58,9 +58,9 @@ jobs:
     strategy:
       matrix:
         include:
-          - id: andrew-vanillaos
+          - id: desktop
             base: ghcr.io/vanilla-os/desktop:main
-          - id: andrew-vanillaos-nvidia
+          - id: nvidia
             base: ghcr.io/vanilla-os/nvidia:main
     env:
       CUSTOM_IMAGE_NAME: ${{ matrix.id }}
@@ -148,9 +148,9 @@ jobs:
     strategy:
       matrix:
         include:
-          - id: andrew-vanillaos
+          - id: desktop
             base: ghcr.io/vanilla-os/desktop:main
-          - id: andrew-vanillaos-nvidia
+          - id: nvidia
             base: ghcr.io/vanilla-os/nvidia:main
     env:
       CUSTOM_IMAGE_NAME: ${{ matrix.id }}
