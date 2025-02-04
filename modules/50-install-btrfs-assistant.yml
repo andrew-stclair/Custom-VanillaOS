@@ -4,4 +4,3 @@ source:
   packages:
   - btrfs-assistant
   - snapper
-  - snapper-gui
