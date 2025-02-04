@@ -1,0 +1,5 @@
+name: install-btrfs-assistant
+type: apt
+source:
+  packages:
+  - btrfs-assistant
