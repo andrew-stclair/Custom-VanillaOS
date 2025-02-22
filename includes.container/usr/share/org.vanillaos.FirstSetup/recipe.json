@@ -672,32 +672,6 @@
                     ]
                 }
             ]
-        },
-        "timeshift": {
-            "template": "yes-no",
-            "is-advanced": true,
-            "preset": false,
-            "icon": "vanilla-history-undo-symbolic",
-            "title": "Timeshift",
-            "description": "Choose whether to install Timeshift to create snapshots of your system.",
-            "buttons": {
-                "yes": "Install",
-                "no": "Skip",
-                "info": {
-                    "type": "text",
-                    "title": "Timeshift",
-                    "text": "Timeshift for Linux is an application that provides functionality similar to the System Restore feature in Windows and the Time Machine tool in Mac OS. Timeshift protects your system by taking incremental snapshots of the file system at regular intervals. These snapshots can be restored at a later date to undo all changes to the system.\n\nIn RSYNC mode, snapshots are taken using rsync and hard-links. Common files are shared between snapshots which saves disk space. Each snapshot is a full system backup that can be browsed with a file manager.\n\nIn BTRFS mode, snapshots are taken using the in-built features of the BTRFS filesystem. BTRFS snapshots are supported only on BTRFS systems having an Ubuntu-type subvolume layout (with @ and @home subvolumes)."
-                }
-            },
-            "final": [
-                {
-                    "if": "timeshift",
-                    "type": "command",
-                    "commands": [
-                        "abroot pkg add timeshift"
-                    ]
-                }
-            ]
         }
     },
     "close_command": "gnome-session-quit --no-prompt",
