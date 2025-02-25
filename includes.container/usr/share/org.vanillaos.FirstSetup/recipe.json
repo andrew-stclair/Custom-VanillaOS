@@ -658,10 +658,7 @@
                     "if": "OBS Studio",
                     "type": "command",
                     "commands": [
-                        "!nextBoot !noRoot flatpak install -y org.obsproject.Studio",
-                        "!nextBoot !noRoot flatpak install -y org.obsproject.Studio.Plugin.BackgroundRemoval",
-                        "!nextBoot !noRoot flatpak install -y org.obsproject.Studio.Plugin.InputOverlay",
-                        "!nextBoot !noRoot flatpak install -y org.obsproject.Studio.Plugin.SceneSwitcher"
+                        "!nextBoot !noRoot flatpak install -y org.obsproject.Studio"
                     ]
                 },
                 {
