@@ -274,8 +274,8 @@
                             "flatpak": true
                         },
                         {
-                            "name": "qpwgraph",
-                            "icon": "org.rncbc.qpwgraph",
+                            "name": "Carla",
+                            "icon": "studio.kx.carla",
                             "flatpak": true
                         }
                     ]
@@ -634,10 +634,10 @@
                     ]
                 },
                 {
-                    "if": "qpwgraph",
+                    "if": "Carla",
                     "type": "command",
                     "commands": [
-                        "!nextBoot !noRoot flatpak install -y org.rncbc.qpwgraph"
+                        "!nextBoot !noRoot flatpak install -y studio.kx.carla"
                     ]
                 },
                 {
