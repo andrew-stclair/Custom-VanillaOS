@@ -269,11 +269,6 @@
                             "flatpak": true
                         },
                         {
-                            "name": "Trayscale",
-                            "icon": "dev.deedles.Trayscale",
-                            "flatpak": true
-                        },
-                        {
                             "name": "qpwgraph",
                             "icon": "org.rncbc.qpwgraph",
                             "flatpak": true
@@ -624,13 +619,6 @@
                     "type": "command",
                     "commands": [
                         "!nextBoot !noRoot flatpak install -y com.microsoft.Edge"
-                    ]
-                },
-                {
-                    "if": "Trayscale",
-                    "type": "command",
-                    "commands": [
-                        "!nextBoot !noRoot flatpak install -y dev.deedles.Trayscale"
                     ]
                 },
                 {
