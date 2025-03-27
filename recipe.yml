@@ -26,6 +26,7 @@ stages:
   - name: modules
     type: includes
     includes:
+      - modules/50-install-experimental-kernel.yml
       - modules/50-install-syncthing.yml
       - modules/50-install-solaar.yml
       - modules/50-install-scdaemon.yml

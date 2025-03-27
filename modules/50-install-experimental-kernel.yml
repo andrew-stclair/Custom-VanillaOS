@@ -3,7 +3,7 @@ type: shell
 commands:
   - echo "Installing the latest experimental kernel"
 modules:
-  - name: experimental kernel
+  - name: experimental kernel pinning
     type: shell
     commands:
       - 'echo "PACKAGE: *" > /etc/apt/preferences.d/linux-kernel'
@@ -11,4 +11,14 @@ modules:
       - 'echo "Pin-Priority: 102" >> /etc/apt/preferences.d/linux-kernel'
       - echo "deb http://deb.debian.org/debian experimental main" >> /etc/apt/sources.list
       - apt update
-      - apt -t experimental install linux-image-amd64 -y
+  - name: kernel
+    type: apt
+    source:
+      packages:
+      - linux-image-amd64/experimental
+      - linux-headers-amd64/experimental
+  - name: kernel-version-file
+    type: shell
+    commands:
+      - mkdir -p /usr/share/vanilla
+      - echo "$(ls -1 /usr/lib/modules | head -n 1)" > /usr/share/vanilla/kernel-version
