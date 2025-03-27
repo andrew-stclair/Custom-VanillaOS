@@ -1,0 +1,14 @@
+name: experimental-kernel
+type: shell
+commands:
+  - echo "Installing the latest experimental kernel"
+modules:
+  - name: experimental kernel
+    type: shell
+    commands:
+      - 'echo "PACKAGE: *" > /etc/apt/preferences.d/linux-kernel'
+      - 'echo "Pin: release o=Debian,a=experimental" >> /etc/apt/preferences.d/linux-kernel'
+      - 'echo "Pin-Priority: 102" >> /etc/apt/preferences.d/linux-kernel'
+      - echo "deb http://deb.debian.org/debian experimental main" >> /etc/apt/sources.list
+      - apt update
+      - apt -i experimental install linux-image-amd64

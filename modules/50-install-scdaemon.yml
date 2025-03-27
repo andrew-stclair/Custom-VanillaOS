@@ -1,0 +1,5 @@
+name: install-scdaemon
+type: apt
+source:
+  packages:
+  - scdaemon
