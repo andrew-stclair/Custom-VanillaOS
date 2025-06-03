@@ -30,6 +30,7 @@ stages:
       - modules/50-install-solaar.yml
       - modules/50-install-scdaemon.yml
       - modules/50-install-steam-devices.yml
+      - modules/50-install-nfs.yml
       - modules/50-install-debs.yml
       - gh:vanilla-os/dev-image:main:modules/00-basics.yml
       - gh:vanilla-os/dev-image:main:modules/05-go.yml

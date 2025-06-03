@@ -1,0 +1,5 @@
+name: install-nfs
+type: apt
+source:
+  packages:
+  - nfs-common
