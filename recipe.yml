@@ -33,7 +33,7 @@ stages:
       - modules/50-install-nfs.yml
       - modules/50-install-debs.yml
       - gh:vanilla-os/dev-image:main:modules/00-basics.yml
-      - gh:vanilla-os/dev-image:main:modules/05-go.yml
+      # - gh:vanilla-os/dev-image:main:modules/05-go.yml
 
   # Put your custom actions before this comment
 
