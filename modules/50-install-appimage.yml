@@ -3,3 +3,4 @@ type: apt
 source:
   packages:
   - libfuse2
+  - libappimage*
