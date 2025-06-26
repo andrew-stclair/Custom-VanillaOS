@@ -1,0 +1,5 @@
+name: install-appimage
+type: apt
+source:
+  packages:
+  - libfuse2
