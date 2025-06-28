@@ -4,4 +4,3 @@ source:
   packages:
   - libfuse2
   - libappimage*
-  - libwebkit2gtk*
