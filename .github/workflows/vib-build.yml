@@ -27,7 +27,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
-      uses: actions/checkout@v5
+      uses: actions/checkout@v6
 
     - name: Update recipe.yml
       uses: fjogeleit/yaml-update-action@main
@@ -75,7 +75,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Update recipe.yml
         uses: fjogeleit/yaml-update-action@main
@@ -164,7 +164,7 @@ jobs:
       id-token: write # Additional permissions for the persistence of the attestations
 
     steps:
-    - uses: actions/checkout@v5
+    - uses: actions/checkout@v6
 
     - name: Update recipe.yml
       uses: fjogeleit/yaml-update-action@main
