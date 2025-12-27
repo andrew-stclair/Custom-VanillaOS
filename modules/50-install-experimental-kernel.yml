@@ -27,6 +27,7 @@ modules:
       packages:
       - linux-image-amd64/experimental
       - linux-headers-amd64/experimental
+      - gcc-15-for-host/experimental
   - name: kernel-version-file
     type: shell
     commands:
