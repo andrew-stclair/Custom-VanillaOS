@@ -7,9 +7,19 @@ modules:
     type: shell
     commands:
       - 'echo "PACKAGE: *" > /etc/apt/preferences.d/linux-kernel'
-      - 'echo "Pin: release o=Debian,a=experimental" >> /etc/apt/preferences.d/linux-kernel'
-      - 'echo "Pin-Priority: 102" >> /etc/apt/preferences.d/linux-kernel'
-      - echo "deb http://deb.debian.org/debian experimental main" >> /etc/apt/sources.list
+      - 'echo "Pin: release a=sid" >> /etc/apt/preferences.d/linux-kernel'
+      - 'echo "Pin-Priority: 900" >> /etc/apt/preferences.d/linux-kernel'
+      - 'echo "" >> /etc/apt/preferences.d/linux-kernel'
+      - 'echo "Package: limux-image-amd64 linux-headers-amd64" >> /etc/apt/preferences.d/linux-kernel'
+      - 'echo "Pin: release a=experimental" >> /etc/apt/preferences.d/linux-kernel'
+      - 'echo "Pin-Priority: 910" >> /etc/apt/preferences.d/linux-kernel'
+      - 'echo "" >> /etc/apt/preferences.d/linux-kernel'
+      - 'echo "Types: deb" > /etc/apt/sources.list.d/experimental.sources'
+      - 'echo "URIs: http://deb.debian.org/debian/" >> /etc/apt/sources.list.d/experimental.sources'
+      - 'echo "Suites: experimental" >> /etc/apt/sources.list.d/experimental.sources'
+      - 'echo "Components: main" >> /etc/apt/sources.list.d/experimental.sources'
+      - 'echo "Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg" >> /etc/apt/sources.list.d/experimental.sources'
+      - 'echo "" >> /etc/apt/sources.list.d/experimental.sources'
       - apt update
   - name: kernel
     type: apt
