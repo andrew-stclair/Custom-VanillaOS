@@ -10,7 +10,7 @@ modules:
       - 'echo "Pin: release a=sid" >> /etc/apt/preferences.d/linux-kernel'
       - 'echo "Pin-Priority: 900" >> /etc/apt/preferences.d/linux-kernel'
       - 'echo "" >> /etc/apt/preferences.d/linux-kernel'
-      - 'echo "Package: limux-image-amd64 linux-headers-amd64" >> /etc/apt/preferences.d/linux-kernel'
+      - 'echo "Package: limux-image-amd64 linux-headers-amd64 gcc-*-for-host" >> /etc/apt/preferences.d/linux-kernel'
       - 'echo "Pin: release a=experimental" >> /etc/apt/preferences.d/linux-kernel'
       - 'echo "Pin-Priority: 910" >> /etc/apt/preferences.d/linux-kernel'
       - 'echo "" >> /etc/apt/preferences.d/linux-kernel'
