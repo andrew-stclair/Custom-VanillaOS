@@ -173,6 +173,10 @@ jobs:
         changes: '{"id":"${{ matrix.id }}","stages.0.base":"${{ matrix.base }}"}'
         commitChange: false
 
+    - name: Download packages
+      run: |
+        wget https://cdn.fastly.steamstatic.com/client/installer/steam.deb -O includes.container/deb-pkgs/steam.deb
+
     - uses: vanilla-os/vib-gh-action@v0.8.1
       with:
         recipe: 'recipe.yml'
