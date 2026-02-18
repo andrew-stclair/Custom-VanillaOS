@@ -336,11 +336,6 @@
                             "flatpak": true
                         },
                         {
-                            "name": "Steam",
-                            "icon": "com.valvesoftware.Steam",
-                            "flatpak": true
-                        },
-                        {
                             "name": "OBS Studio",
                             "icon": "org.obsproject.Studio",
                             "flatpak": true,
