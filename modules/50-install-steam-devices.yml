@@ -1,5 +1,5 @@
 name: install-steam-devices
 type: apt
-source:
-  packages:
-  - steam-devices
+sources:
+  - packages:
+    - steam-devices

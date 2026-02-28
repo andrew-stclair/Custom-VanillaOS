@@ -23,11 +23,11 @@ modules:
       - apt update
   - name: kernel
     type: apt
-    source:
-      packages:
-      - linux-image-amd64/experimental
-      - linux-headers-amd64/experimental
-      - gcc-15-for-host/experimental
+    sources:
+      - packages:
+        - linux-image-amd64/experimental
+        - linux-headers-amd64/experimental
+        - gcc-15-for-host/experimental
   - name: kernel-version-file
     type: shell
     commands:
