@@ -1,5 +1,5 @@
 name: install-solaar
 type: apt
-source:
-  packages:
-  - solaar
+sources:
+  - packages:
+    - solaar

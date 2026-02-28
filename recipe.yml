@@ -1,8 +1,11 @@
 name: Andrew's Custom VanillaOS Desktop
 id: templated # Check the matrix in the workflow files
+vibversion: 1.0.7
+
 stages:
 - id: build
   base: templated # Check the matrix in the workflow files
+  addincludes: true
   singlelayer: false
   labels:
     maintainer: self-maintained # Optionally, Replace this with your name
@@ -70,4 +73,3 @@ stages:
     commands:
       - rm -rf /tmp/*
       - rm -rf /var/tmp/*
-      - rm -rf /sources

@@ -12,6 +12,6 @@ modules:
     - apt-get update
   - name: install-tailscale
     type: apt
-    source:
-      packages:
-      - tailscale
+    sources:
+      -packages:
+        - tailscale

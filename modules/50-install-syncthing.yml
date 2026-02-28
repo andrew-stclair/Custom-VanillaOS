@@ -1,5 +1,5 @@
 name: install-syncthing
 type: apt
-source:
-  packages:
-  - syncthing
+sources:
+  - packages:
+    - syncthing
