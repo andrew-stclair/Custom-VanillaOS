@@ -1,5 +1,7 @@
 FROM mcr.microsoft.com/devcontainers/base:trixie
 
+RUN sudo apt-get update && sudo apt-get install -y podman git-lfs && sudo apt-get clean
+
 RUN curl -SLO $(curl -s https://api.github.com/repos/Vanilla-OS/Vib/releases/latest | jq -r '.assets.[] | select(.name == "vib-amd64") | .browser_download_url') \
  && sudo mv vib-amd64 /usr/bin/vib \
  && sudo chmod +x /usr/bin/vib
