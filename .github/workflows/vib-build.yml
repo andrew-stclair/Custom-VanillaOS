@@ -177,7 +177,7 @@ jobs:
       run: |
         wget https://cdn.fastly.steamstatic.com/client/installer/steam.deb -O includes.container/deb-pkgs/steam.deb
 
-    - uses: vanilla-os/vib-gh-action@v1.0.7
+    - uses: vanilla-os/vib-gh-action@v1.1.0
       with:
         recipe: 'recipe.yml'
         plugins: 'Vanilla-OS/vib-fsguard:v1.5.3'
